@@ -1,0 +1,1135 @@
+loaded: 'true'
+Battle Cry: 
+  name: 'Battle Cry'
+  type: 'Passive'
+  max-level: '25'
+  skill-req-lvl: '1'
+  needs-permission: 'false'
+  attributes: 
+    level-base: '1'
+    level-scale: '1'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '15'
+    cooldown-scale: '-0.35'
+    mana-base: '0'
+    mana-scale: '0'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}&r'
+  icon: 'APPLE'
+  icon-data: '0'
+  icon-lore: 
+  - '&3{name} &7(&2{level}&7/&2{max}&7)'
+  - '  &2+{attr:battlecry-damage.value}&2% &6max health true damage'
+  - ''
+  - '{req:level}Required level: {attr:level}'
+  - '{req:cost}Rank up cost: {attr:cost}'
+  - ''
+  desc: ' []'
+  components: 
+    Physical Damage-a: 
+      type: 'trigger'
+      indicator: '3D'
+      data: 
+        icon-key: ''
+        mana: 'False'
+        cooldown: 'False'
+        target: 'True'
+        type: 'Melee'
+        dmg-min: '0'
+        dmg-max: '99999'
+        indicator: '2D'
+      children: 
+        Damage-b: 
+          type: 'mechanic'
+          indicator: '3D'
+          data: 
+            icon-key: 'battlecry-damage'
+            counts: 'True'
+            type: 'Multiplier'
+            value-base: '0.15'
+            value-scale: '0.035'
+            true: 'True'
+            classifier: 'default'
+            indicator: '2D'
+          children: ' {}'
+Brute Strength: 
+  name: 'Brute Strength'
+  type: 'Passive'
+  max-level: '25'
+  skill-req-lvl: '1'
+  needs-permission: 'false'
+  attributes: 
+    level-base: '1'
+    level-scale: '1'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '0'
+    cooldown-scale: '0'
+    mana-base: '0'
+    mana-scale: '0'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}&r'
+  icon: 'APPLE'
+  icon-durability: '0'
+  icon-data: '0'
+  icon-lore: 
+  - '&3{name} &7(&2{level}&7/&2{max}&7)'
+  - '  &2+{attr:battlecry-damage.value}&2% &6max health true damage'
+  - ''
+  - '{req:level}Required level: {attr:level}'
+  - '{req:cost}Rank up cost: {attr:cost}'
+  - ''
+  desc: ' []'
+  components: 
+    Physical Damage-a: 
+      type: 'trigger'
+      indicator: '3D'
+      data: 
+        icon-key: ''
+        mana: 'False'
+        cooldown: 'False'
+        target: 'True'
+        type: 'Melee'
+        dmg-min: '0'
+        dmg-max: '99999'
+        indicator: '2D'
+      children: 
+        Damage-b: 
+          type: 'mechanic'
+          indicator: '3D'
+          data: 
+            icon-key: 'battlecry-damage'
+            counts: 'True'
+            type: 'Multiplier'
+            value-base: '0.15'
+            value-scale: '0.035'
+            true: 'True'
+            classifier: 'default'
+            indicator: '2D'
+          children: ' {}'
+Bolt: 
+  name: 'Bolt'
+  type: 'Dynamic'
+  max-level: '10'
+  skill-req-lvl: '1'
+  needs-permission: 'false'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '15'
+    cooldown-scale: '0'
+    mana-base: '25'
+    mana-scale: '5'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'DIAMOND_BOOTS'
+  icon-data: '0'
+  icon-lore: 
+  - '&3{name} &7(&2{level}&7/&2{max}&7)'
+  - '  &2Movement Speed&7: &2x{attr:bolt-speed.multiplier}'
+  - '  &2Duration&7: {attr:bolt-speed.duration} &2seconds'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown} seconds'
+  desc: ' []'
+  components: 
+    Cast: 
+      type: 'trigger'
+      indicator: '3D'
+      data: 
+        icon-key: ''
+        indicator: '2D'
+      children: 
+        Self-b: 
+          type: 'target'
+          indicator: '3D'
+          data: 
+            icon-key: ''
+            indicator: '2D'
+            group: 'enemy'
+            wall: 'false'
+            caster: 'false'
+          children: 
+            Speed-c: 
+              type: 'mechanic'
+              indicator: '3D'
+              data: 
+                icon-key: 'bolt-speed'
+                counts: 'True'
+                multiplier-base: '1.5'
+                multiplier-scale: '0.5'
+                duration-base: '10'
+                duration-scale: '0'
+                indicator: '2D'
+              children: ' {}'
+Emergency Zoom: 
+  name: 'Emergency Zoom'
+  type: 'Passive'
+  max-level: '10'
+  skill-req-lvl: '1'
+  needs-permission: 'false'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '0'
+    cooldown-scale: '0'
+    mana-base: '0'
+    mana-scale: '0'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'JACK_O_LANTERN'
+  icon-data: '0'
+  desc: ' []'
+  components: 
+    Took Physical Damage-a: 
+      type: 'trigger'
+      indicator: '3D'
+      data: 
+        icon-key: ''
+        mana: 'False'
+        cooldown: 'False'
+        target: 'True'
+        type: 'Both'
+        dmg-min: '0'
+        dmg-max: '999'
+        indicator: '2D'
+      children: 
+        Flag-b: 
+          type: 'condition'
+          indicator: '3D'
+          data: 
+            icon-key: ''
+            type: 'Not Set'
+            key: 'emergency-zoom-active'
+            indicator: '2D'
+          children: 
+            Speed-c: 
+              type: 'mechanic'
+              indicator: '3D'
+              data: 
+                icon-key: 'emergency-zoom-speed'
+                counts: 'False'
+                multiplier-base: '1.2'
+                multiplier-scale: '0.1'
+                duration-base: '5'
+                duration-scale: '0.5'
+                indicator: '2D'
+              children: ' {}'
+            Flag-d: 
+              type: 'mechanic'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                counts: 'True'
+                key: 'emergency-zoom-active'
+                seconds-base: '7.5'
+                seconds-scale: '0.5'
+                indicator: '2D'
+              children: ' {}'
+High Yeet: 
+  name: 'High Yeet'
+  type: 'Dynamic'
+  max-level: '10'
+  skill-req-lvl: '1'
+  needs-permission: 'false'
+  combo: 'S L L L'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '2.5'
+    cooldown-scale: '0'
+    mana-base: '10'
+    mana-scale: '0'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'LEATHER_BOOTS'
+  icon-data: '0'
+  icon-lore: 
+  - '&3{name} &7(&2{level}&7/&2{max}&7)'
+  - '  &2Upward launch&7: {attr:high-yeet-launch.upward}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown} seconds'
+  desc: ' []'
+  components: 
+    Cast: 
+      type: 'trigger'
+      indicator: '3D'
+      data: 
+        icon-key: ''
+        indicator: '2D'
+      children: 
+        Launch-b: 
+          type: 'mechanic'
+          indicator: '3D'
+          data: 
+            icon-key: 'high-yeet-launch'
+            counts: 'True'
+            relative: 'Target'
+            forward-base: '0'
+            forward-scale: '0'
+            upward-base: '0.33'
+            upward-scale: '0.04'
+            right-base: '0'
+            right-scale: '0'
+            indicator: '2D'
+          children: ' {}'
+Long Yeet: 
+  name: 'Long Yeet'
+  type: 'Dynamic'
+  max-level: '10'
+  skill-req-lvl: '1'
+  needs-permission: 'false'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '2.5'
+    cooldown-scale: '0'
+    mana-base: '10'
+    mana-scale: '0'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'IRON_BOOTS'
+  icon-data: '0'
+  icon-lore: 
+  - '&3{name} &7(&2{level}&7/&2{max}&7)'
+  - '  &2Forward launch&7: {attr:long-yeet-launch.forward}'
+  - '  &2Upward launch&7: {attr:long-yeet-launch.upward}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:level}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown} seconds'
+  desc: ' []'
+  components: 
+    Cast: 
+      type: 'trigger'
+      indicator: '3D'
+      data: 
+        icon-key: ''
+        indicator: '2D'
+      children: 
+        Launch-b: 
+          type: 'mechanic'
+          indicator: '3D'
+          data: 
+            icon-key: 'long-yeet-launch'
+            counts: 'True'
+            relative: 'Target'
+            forward-base: '0.65'
+            forward-scale: '0.085'
+            upward-base: '0.32'
+            upward-scale: '0.035'
+            right-base: '0'
+            right-scale: '0'
+            indicator: '2D'
+          children: ' {}'
+Shadow: 
+  name: 'Shadow'
+  type: 'Dynamic'
+  max-level: '10'
+  skill-req-lvl: '1'
+  needs-permission: 'false'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '5'
+    cooldown-scale: '0'
+    mana-base: '10'
+    mana-scale: '0'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'APPLE'
+  icon-data: '0'
+  icon-lore: 
+  - '&3{name} &7(&2{level}&7/&2{max}&7)'
+  - '  &6Physical Damage &2Immunity'
+  - '  &2Duration&7: {attr:shadow-immunity.seconds} &2seconds'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown} seconds'
+  desc: ' []'
+  components: 
+    Cast: 
+      type: 'trigger'
+      indicator: '3D'
+      data: 
+        icon-key: ''
+        indicator: '2D'
+      children: 
+        Self-b: 
+          type: 'target'
+          indicator: '3D'
+          data: 
+            icon-key: ''
+            indicator: '2D'
+            group: 'enemy'
+            wall: 'false'
+            caster: 'false'
+          children: 
+            Immunity-c: 
+              type: 'mechanic'
+              indicator: '3D'
+              data: 
+                icon-key: 'shadow-immunity'
+                counts: 'True'
+                type: 'Entity Attack'
+                seconds-base: '5'
+                seconds-scale: '0.5'
+                multiplier-base: '0'
+                multiplier-scale: '0'
+                indicator: '2D'
+              children: ' {}'
+            Immunity-d: 
+              type: 'mechanic'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                counts: 'True'
+                type: 'Projectile'
+                seconds-base: '5'
+                seconds-scale: '0.5'
+                multiplier-base: '0'
+                multiplier-scale: '0'
+                indicator: '2D'
+              children: ' {}'
+Dash: 
+  name: 'Dash'
+  type: 'Dynamic'
+  max-level: '10'
+  skill-req: 'None'
+  skill-req-lvl: '1'
+  needs-permission: 'false'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '15'
+    cooldown-scale: '0'
+    mana-base: '100'
+    mana-scale: '5'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'DIAMOND_BOOTS'
+  icon-durability: '0'
+  icon-data: '0'
+  icon-lore: 
+  - '&3{name} &7(&2{level}&7/&2{max}&7)'
+  - '  &2Movement Speed&7: &2x{attr:bolt-speed.multiplier}'
+  - '  &2Duration&7: {attr:dash-speed.duration} &2seconds'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown} seconds'
+  desc: ' []'
+  components: 
+    Cast: 
+      type: 'trigger'
+      indicator: '3D'
+      data: 
+        icon-key: ''
+        indicator: '2D'
+      children: 
+        Speed-b: 
+          type: 'mechanic'
+          indicator: '3D'
+          data: 
+            icon-key: 'bolt-speed'
+            counts: 'True'
+            multiplier-base: '3'
+            multiplier-scale: '0.5'
+            duration-base: '10'
+            duration-scale: '0'
+            indicator: '2D'
+          children: ' {}'
+Deep Breaths P: 
+  name: 'Deep Breaths P'
+  type: 'Dynamic'
+  max-level: '1'
+  skill-req-lvl: '1'
+  needs-permission: 'false'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '0'
+    cooldown-scale: '0'
+    mana-base: '0'
+    mana-scale: '0'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'JACK_O_LANTERN'
+  icon-durability: '0'
+  icon-data: '0'
+  desc: ' []'
+  components: 
+    Crouch-a: 
+      type: 'trigger'
+      indicator: '3D'
+      data: 
+        icon-key: ''
+        mana: 'False'
+        cooldown: 'False'
+        type: 'Start Crouching'
+        indicator: '2D'
+      children: 
+        Self-b: 
+          type: 'target'
+          indicator: '3D'
+          data: 
+            icon-key: ''
+            indicator: '2D'
+            group: 'enemy'
+            wall: 'false'
+            caster: 'false'
+          children: 
+            Mana-c: 
+              type: 'mechanic'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                counts: 'False'
+                type: 'Mana'
+                value-base: '1'
+                value-scale: '0'
+                indicator: '2D'
+              children: ' {}'
+Leap: 
+  name: 'Leap'
+  type: 'Dynamic'
+  max-level: '10'
+  skill-req-lvl: '1'
+  needs-permission: 'false'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '2.5'
+    cooldown-scale: '0'
+    mana-base: '50'
+    mana-scale: '0'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'IRON_BOOTS'
+  icon-durability: '0'
+  icon-data: '0'
+  icon-lore: 
+  - '&3{name} &7(&2{level}&7/&2{max}&7)'
+  - '  &2Forward launch&7: {attr:leap-launch.forward}'
+  - '  &2Upward launch&7: {attr:leap-launch.upward}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown} seconds'
+  desc: ' []'
+  components: 
+    Cast: 
+      type: 'trigger'
+      indicator: '3D'
+      data: 
+        icon-key: ''
+        indicator: '2D'
+      children: 
+        Launch-b: 
+          type: 'mechanic'
+          indicator: '3D'
+          data: 
+            icon-key: 'long-yeet-launch'
+            counts: 'True'
+            relative: 'Target'
+            forward-base: '0.65'
+            forward-scale: '0.085'
+            upward-base: '0.32'
+            upward-scale: '0.035'
+            right-base: '0'
+            right-scale: '0'
+            indicator: '2D'
+          children: ' {}'
+Quick Climb: 
+  name: 'Quick Climb'
+  type: 'Dynamic'
+  max-level: '10'
+  skill-req-lvl: '1'
+  needs-permission: 'false'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '2.5'
+    cooldown-scale: '0'
+    mana-base: '50'
+    mana-scale: '0'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'LEATHER_BOOTS'
+  icon-durability: '0'
+  icon-data: '0'
+  icon-lore: 
+  - '&3{name} &7(&2{level}&7/&2{max}&7)'
+  - '  &2Upward launch&7: {attr:quick-climb-launch.upward}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown} seconds'
+  desc: ' []'
+  components: 
+    Cast: 
+      type: 'trigger'
+      indicator: '3D'
+      data: 
+        icon-key: ''
+        indicator: '2D'
+      children: 
+        Launch-b: 
+          type: 'mechanic'
+          indicator: '3D'
+          data: 
+            icon-key: 'high-yeet-launch'
+            counts: 'True'
+            relative: 'Target'
+            forward-base: '0'
+            forward-scale: '0'
+            upward-base: '0.33'
+            upward-scale: '0.04'
+            right-base: '0'
+            right-scale: '0'
+            indicator: '2D'
+          children: ' {}'
+Shadow Dance P: 
+  name: 'Shadow Dance P'
+  type: 'Dynamic'
+  max-level: '10'
+  skill-req-lvl: '1'
+  needs-permission: 'false'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '5'
+    cooldown-scale: '0'
+    mana-base: '10'
+    mana-scale: '0'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'BLACK_STAINED_GLASS_PANE'
+  icon-durability: '0'
+  icon-data: '15'
+  icon-lore: 
+  - '&3{name} &7(&2{level}&7/&2{max}&7)'
+  - '  &6Physical Damage &2Immunity'
+  - '  &2Duration&7: {attr:shadow-dance-immunity.seconds} &2seconds'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown} seconds'
+  desc: ' []'
+  components: 
+    Cast: 
+      type: 'trigger'
+      indicator: '3D'
+      data: 
+        icon-key: ''
+        indicator: '2D'
+      children: 
+        Self-b: 
+          type: 'target'
+          indicator: '3D'
+          data: 
+            icon-key: ''
+            indicator: '2D'
+            group: 'enemy'
+            wall: 'false'
+            caster: 'false'
+          children: 
+            Chance-c: 
+              type: 'condition'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                chance-base: '25'
+                chance-scale: '0'
+                indicator: '2D'
+              children: 
+                Immunity-d: 
+                  type: 'mechanic'
+                  indicator: '3D'
+                  data: 
+                    icon-key: ''
+                    counts: 'False'
+                    type: 'Entity Attack'
+                    seconds-base: '1'
+                    seconds-scale: '0'
+                    multiplier-base: '0'
+                    multiplier-scale: '0'
+                    indicator: '2D'
+                  children: ' {}'
+                Immunity-e: 
+                  type: 'mechanic'
+                  indicator: '3D'
+                  data: 
+                    icon-key: ''
+                    counts: 'False'
+                    type: 'Projectile'
+                    seconds-base: '1'
+                    seconds-scale: '0'
+                    multiplier-base: '0'
+                    multiplier-scale: '0'
+                    indicator: '2D'
+                  children: ' {}'
+Soft Landing P: 
+  name: 'Soft Landing P'
+  type: 'Passive'
+  max-level: '1'
+  skill-req-lvl: '1'
+  needs-permission: 'false'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '0'
+    cooldown-scale: '0'
+    mana-base: '0'
+    mana-scale: '0'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'FEATHER'
+  icon-durability: '0'
+  icon-data: '0'
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc: ' []'
+  components: 
+    Environment Damage-a: 
+      type: 'trigger'
+      indicator: '3D'
+      data: 
+        icon-key: ''
+        mana: 'False'
+        cooldown: 'False'
+        type: 'Fall'
+        indicator: '2D'
+      children: 
+        Cancel-b: 
+          type: 'mechanic'
+          indicator: '3D'
+          data: 
+            icon-key: ''
+            counts: 'False'
+            indicator: '2D'
+          children: ' {}'
+Summon: 
+  name: 'Summon'
+  type: 'Dynamic'
+  max-level: '10'
+  skill-req-lvl: '1'
+  needs-permission: 'false'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '25'
+    cooldown-scale: '0'
+    mana-base: '50'
+    mana-scale: '0'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'WOLF_SPAWN_EGG'
+  icon-durability: '0'
+  icon-data: '95'
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc: ' []'
+  components: 
+    Cast: 
+      type: 'trigger'
+      indicator: '3D'
+      data: 
+        icon-key: ''
+        indicator: '2D'
+      children: 
+        Wolf-b: 
+          type: 'mechanic'
+          indicator: '3D'
+          data: 
+            icon-key: ''
+            counts: 'True'
+            color: 'BLACK'
+            name: "{player}'s Bork"
+            health-base: '10'
+            health-scale: '.5'
+            damage-base: '3'
+            damage-scale: '0.25'
+            sitting: 'False'
+            seconds-base: '10'
+            seconds-scale: '0.5'
+            amount-base: '1'
+            amount-scale: '1'
+            skills: 
+            - ''
+            indicator: '2D'
+          children: ' {}'
+Transform: 
+  name: 'Transform'
+  type: 'Dynamic'
+  max-level: '10'
+  skill-req-lvl: '1'
+  needs-permission: 'false'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '0'
+    cooldown-scale: '0'
+    mana-base: '0'
+    mana-scale: '0'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'RABBIT_FOOT'
+  icon-durability: '0'
+  icon-data: '0'
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc: ' []'
+  components: 
+    Cast: 
+      type: 'trigger'
+      indicator: '3D'
+      data: 
+        icon-key: ''
+        indicator: '2D'
+      children: 
+        Self-b: 
+          type: 'target'
+          indicator: '3D'
+          data: 
+            icon-key: ''
+            indicator: '2D'
+            group: 'enemy'
+            wall: 'false'
+            caster: 'false'
+          children: 
+            Disguise-c: 
+              type: 'mechanic'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                counts: 'True'
+                duration-base: '-1'
+                duration-scale: '0'
+                type: 'Mob'
+                mob: 'Rabbit'
+                adult: 'True'
+                indicator: '2D'
+              children: ' {}'
+Warp Target Test: 
+  name: 'Warp Target Test'
+  type: 'Dynamic'
+  max-level: '5'
+  skill-req-lvl: '1'
+  needs-permission: 'false'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '0'
+    cooldown-scale: '0'
+    mana-base: '0'
+    mana-scale: '0'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'PURPLE_STAINED_GLASS_PANE'
+  icon-durability: '0'
+  icon-data: '10'
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc: ' []'
+  components: 
+    Cast: 
+      type: 'trigger'
+      indicator: '3D'
+      data: 
+        icon-key: ''
+        indicator: '2D'
+      children: 
+        Warp Target-b: 
+          type: 'mechanic'
+          indicator: '3D'
+          data: 
+            icon-key: ''
+            counts: 'True'
+            type: 'Caster to Target'
+            indicator: '2D'
+          children: ' {}'
+Rend: 
+  name: 'Rend'
+  type: 'Instant'
+  max-level: 5
+  skill-req: 'None'
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    level-base: '1'
+    level-scale: '4'
+    cost-base: '1'
+    cost-scale: '1'
+    cooldown-base: '12'
+    cooldown-scale: '-0.75'
+    mana-base: '10'
+    mana-scale: '2.5'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '4'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}&r'
+  icon: 'BEEF'
+  icon-durability: 0
+  icon-data: 0
+  icon-lore: 
+  - '&3{name} &F(&2{level}&F/&2{max}&F)'
+  - '&2Cast type: &6{type}'
+  - '&2Cost: {attr:mana} &2mana'
+  - '&2Cooldown: {attr:cooldown} &2seconds'
+  - '&2Range: {attr:rend-target.range} &2blocks'
+  - ''
+  - " &FRends the target's flesh, dealing"
+  - '   {attr:rend-tick-dmg.value} &2skill damage'
+  - '   &Fevery &61.5 &Fseconds {attr:rend-dmg-rep.repetitions} times'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      indicator: '3D'
+      data: 
+        icon-key: ''
+        indicator: '2D'
+      children: 
+        Single-b: 
+          type: 'target'
+          indicator: '3D'
+          data: 
+            icon-key: 'rend-target'
+            range-base: '1.6'
+            range-scale: '0.15'
+            tolerance-base: '2'
+            tolerance-scale: '0.125'
+            group: 'Enemy'
+            wall: 'False'
+            indicator: '2D'
+            caster: 'false'
+          children: 
+            Repeat-c: 
+              type: 'mechanic'
+              indicator: '3D'
+              data: 
+                icon-key: 'rend-dmg-rep'
+                counts: 'True'
+                repetitions-base: '6'
+                repetitions-scale: '1'
+                period: '1.5'
+                delay: '0'
+                stop-on-fail: 'False'
+                indicator: '2D'
+              children: 
+                Damage-d: 
+                  type: 'mechanic'
+                  indicator: '2D'
+                  data: 
+                    icon-key: 'rend-tick-dmg'
+                    counts: 'False'
+                    type: 'Damage'
+                    value-base: '1'
+                    value-scale: '0.1'
+                    true: 'False'
+                    classifier: 'damage-over-time'
+                    indicator: '3D'
+                  children:  {}
+Hack n Slash: 
+  name: 'Hack n Slash'
+  type: 'Instant'
+  max-level: 10
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    level-base: '1'
+    level-scale: '2'
+    cost-base: '1'
+    cost-scale: '1'
+    cooldown-base: '10'
+    cooldown-scale: '-0.5'
+    mana-base: '8'
+    mana-scale: '1.2'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '2'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}&r'
+  icon: 'WOODEN_AXE'
+  icon-durability: 0
+  icon-data: 0
+  icon-lore: 
+  - '&3{name} &F(&2{level}&F/&2{max}&F)'
+  - '&2Cast type: &6{type}'
+  - '&2Cost: {attr:mana} &2mana'
+  - '&2Cooldown: {attr:cooldown} &2seconds'
+  - '&2Range: {attr:hack-n-slash-cone.range} &2blocks'
+  - ''
+  - ' &FFuriously slashes a {attr:hack-n-slash-cone.angle} degree arc in'
+  - '   &Ffront of you dealing {attr:hack-n-slash-dmg.value} &2skill damage'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      indicator: '3D'
+      data: 
+        icon-key: ''
+        indicator: '2D'
+      children: 
+        Cone-b: 
+          type: 'target'
+          indicator: '3D'
+          data: 
+            icon-key: 'hack-n-slash-cone'
+            range-base: '2.2'
+            range-scale: '0.2'
+            angle-base: '45'
+            angle-scale: '5'
+            group: 'Enemy'
+            wall: 'False'
+            caster: 'False'
+            max-base: '99'
+            max-scale: '0'
+            indicator: '2D'
+          children: 
+            Damage-c: 
+              type: 'mechanic'
+              indicator: '3D'
+              data: 
+                icon-key: 'hack-n-slash-dmg'
+                counts: 'True'
+                type: 'Damage'
+                value-base: '5.25'
+                value-scale: '1.25'
+                true: 'False'
+                classifier: 'area-of-effect'
+                indicator: '2D'
+              children:  {}

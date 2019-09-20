@@ -1,0 +1,42 @@
+Warrior: 
+  name: 'Warrior'
+  action-bar: ''
+  prefix: '&6Warrior'
+  group: 'class'
+  mana: '&2Mana'
+  max-level: 25
+  parent: ''
+  needs-permission: 'false'
+  attributes: 
+    health-base: '22'
+    health-scale: '0.15'
+    mana-base: '15'
+    mana-scale: '0.2'
+    vitality-base: '1'
+    vitality-scale: '0.333'
+    spirit-base: '0'
+    spirit-scale: '0'
+    intelligence-base: '0.5'
+    intelligence-scale: '0.16'
+    dexterity-base: '0.8'
+    dexterity-scale: '0.05'
+    strength-base: '1.25'
+    strength-scale: '0.45'
+    charisma-base: '0'
+    charisma-scale: '0.1'
+    luck-base: '1'
+    luck-scale: '1'
+  mana-regen: 0.25
+  tree: 'FLOOD'
+  blacklist: 
+  - 'CROSSBOW'
+  - 'BOW'
+  skills: 
+  - 'Rend'
+  - 'Hack n Slash'
+  icon: 'LEATHER_CHESTPLATE'
+  icon-durability: 0
+  icon-data: 0
+  icon-lore: 
+  - '&dThe warrior is a fearsome opponent, striking down opponents with powerful blows while enduring almost any barrage of attacks thrown at them.'
+  exp-source: 337

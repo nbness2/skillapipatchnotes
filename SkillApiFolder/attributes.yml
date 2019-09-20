@@ -1,0 +1,100 @@
+# Attributes.yml
+
+# For full details, visit
+# http://dev.bukkit.org/bukkit-plugins/skillapi/pages/attributes/
+
+# List of available stats to modify:
+#   health           - the max health of the player
+#   mana             - the amount of mana the player has
+#   mana-regen       - how much mana the player regenerates over time
+#   physical-damage  - damage dealt without using skills
+#   physical-defense - damage taken from non-skill attacks
+#   skill-damage     - damage dealt with skills
+#   skill-defense    - damage taken from skills
+#   move-speed       - movement speed of the player
+vitality: 
+  display: 'Vitality'
+  max: '100'
+  icon: 'purple dye'
+  icon-data: '1'
+  icon-lore: 
+  - '&3Vitality &7(&2{amount}&7/&2100&7)'
+  - '  &2+&61.1&2% &6maximum health'
+  - '  &2+&61.5&2% &6satiated healing'
+  - '  &2+&60.1&2% &6armor toughness'
+  stats: 
+    health: '(1 + (a * 0.011)) * v'
+    hunger-heal: '(1 + (a * 0.015)) * v'
+    armor-toughness: '(1 + (a * 0.001)) * v'
+spirit: 
+  display: 'Spirit'
+  max: '100'
+  icon: 'light blue dye'
+  icon-lore: 
+  - '&3Spirit &7(&2{amount}&7/&2100&7)'
+  - '  &2+&61&2% &6resource regeneration'
+  - '  &2+&60.1&2% &6cooldown reduction'
+  - '  &2+&61&2% &6hunger retention'
+  stats:
+    mana-regen: '(1 + (a * 0.01)) * v'
+    cooldown: '(1 + (1 * 0.001)) * v'
+    hunger: '(1 + (1 * 0.01)) * v'
+intelligence: 
+  display: 'Intelligence'
+  max: '100'
+  icon: 'blue dye'
+  icon-lore: 
+  - '&3Intelligence &7(&2{amount}&7/&2100&7)'
+  - '  &2+&60.85&2% &6maximum resource'
+  - '  &2+&60.90&2% &6skill damage'
+  global: 
+    mechanic: 
+      Damage-value: '(1 + (a * 0.009)) * v'
+  stats:
+    mana: '(1 + (a * 0.0085)) * v'
+dexterity: 
+  display: 'Dexterity'
+  max: '100'
+  icon: 'green dye'
+  icon-lore: 
+  - '&3Dexterity &7(&2{amount}&7/&2100&7)'
+  - '  &2+&60.20&2% &6movement speed'
+  - '  &2+&60.25&2% &6fall damage resist'
+  - '  &2+&60.35&2% &6attack speed'
+  stats:
+    move-speed: '(1 + (a * 0.002)) * v'
+    defense-fall: '(1+(a * 0.0025)) * v'
+    attack-speed: '(1 + (a * 0.0035)) * v'
+strength: 
+  display: 'Strength'
+  max: '100'
+  icon: 'red dye'
+  icon-lore: 
+  - '&3Strength &7(&2{amount}&7/&2100&7)'
+  - '  &2+&61&2% &6physical damage'
+  - '  &2+&60.25&2% &6knockback resist chance'
+  stats: 
+    physical-damage: '(1 + (a * 0.01)) * v'
+    knockback-resist: '(1 + (a * 0.0025)) * v'
+charisma: 
+  display: 'Charisma'
+  max: '100'
+  icon: 'magenta dye'
+  icon-lore: 
+  - '&3Charisma &7(&2{amount}&7/&2100&7)'
+  - '  &2+&60.20&2% &6physical damage resist'
+  - '  &2+&60.25&2% &6skill damage resist'
+  stats: 
+    physical-defense: '(1 + (a * 0.0020)) * v'
+    skill-defense: '(1 + (a * 0.0025)) * v'
+wisdom:
+  display: 'Wisdom'
+  max: '100'
+  icon: 'white dye'
+  icon-lore:
+  - '&3Wisdom &7(&2{amount}&7/&2100&7)'
+  - '  &2+&61.5&2% &6experience gained'
+  - '  &2+&61&2% &6rare loot chance'
+  stats: 
+    experience: '(1 + (a * 0.015)) * v'
+    luck: '(1 + (a * 0.0025)) * v'

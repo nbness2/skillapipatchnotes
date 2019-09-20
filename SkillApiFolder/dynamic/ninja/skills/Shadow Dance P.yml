@@ -1,0 +1,87 @@
+Shadow Dance P: 
+  name: 'Shadow Dance P'
+  type: 'Dynamic'
+  max-level: 10
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '5'
+    cooldown-scale: '0'
+    mana-base: '10'
+    mana-scale: '0'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'BLACK_STAINED_GLASS_PANE'
+  icon-durability: 0
+  icon-data: 15
+  icon-lore: 
+  - '&3{name} &7(&2{level}&7/&2{max}&7)'
+  - '  &6Physical Damage &2Immunity'
+  - '  &2Duration&7: {attr:shadow-dance-immunity.seconds} &2seconds'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown} seconds'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      indicator: '3D'
+      data: 
+        icon-key: ''
+        indicator: '2D'
+      children: 
+        Self-b: 
+          type: 'target'
+          indicator: '3D'
+          data: 
+            icon-key: ''
+            indicator: '2D'
+            group: 'enemy'
+            wall: 'false'
+            caster: 'false'
+          children: 
+            Chance-c: 
+              type: 'condition'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                chance-base: '25'
+                chance-scale: '0'
+                indicator: '2D'
+              children: 
+                Immunity-d: 
+                  type: 'mechanic'
+                  indicator: '3D'
+                  data: 
+                    icon-key: ''
+                    counts: 'False'
+                    type: 'Entity Attack'
+                    seconds-base: '1'
+                    seconds-scale: '0'
+                    multiplier-base: '0'
+                    multiplier-scale: '0'
+                    indicator: '2D'
+                  children:  {}
+                Immunity-e: 
+                  type: 'mechanic'
+                  indicator: '3D'
+                  data: 
+                    icon-key: ''
+                    counts: 'False'
+                    type: 'Projectile'
+                    seconds-base: '1'
+                    seconds-scale: '0'
+                    multiplier-base: '0'
+                    multiplier-scale: '0'
+                    indicator: '2D'
+                  children:  {}

@@ -1,0 +1,55 @@
+Dash: 
+  name: 'Dash'
+  type: 'Dynamic'
+  max-level: 10
+  skill-req: 'None'
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '15'
+    cooldown-scale: '0'
+    mana-base: '100'
+    mana-scale: '5'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'DIAMOND_BOOTS'
+  icon-durability: 0
+  icon-data: 0
+  icon-lore: 
+  - '&3{name} &7(&2{level}&7/&2{max}&7)'
+  - '  &2Movement Speed&7: &2x{attr:bolt-speed.multiplier}'
+  - '  &2Duration&7: {attr:dash-speed.duration} &2seconds'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown} seconds'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      indicator: '3D'
+      data: 
+        icon-key: ''
+        indicator: '2D'
+      children: 
+        Speed-b: 
+          type: 'mechanic'
+          indicator: '3D'
+          data: 
+            icon-key: 'bolt-speed'
+            counts: 'True'
+            multiplier-base: '3'
+            multiplier-scale: '0.5'
+            duration-base: '10'
+            duration-scale: '0'
+            indicator: '2D'
+          children:  {}

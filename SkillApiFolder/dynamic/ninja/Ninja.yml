@@ -1,0 +1,32 @@
+Ninja: 
+  name: 'Ninja'
+  action-bar: ''
+  prefix: 'Nin'
+  group: 'class'
+  mana: 'Stamina'
+  max-level: 100
+  parent: ''
+  needs-permission: 'false'
+  attributes: 
+    health-base: '20'
+    health-scale: '0.10'
+    mana-base: '100'
+    mana-scale: '2.5'
+    vitality-base: '.75'
+    vitality-scale: '.50'
+    spirit-base: '1.25'
+    spirit-scale: '.60'
+    intelligence-base: '.75'
+    intelligence-scale: '.50'
+    dexterity-base: '1.75'
+    dexterity-scale: '.75'
+    strength-base: '.75'
+    strength-scale: '.50'
+  mana-regen: 10.0
+  tree: 'REQUIREMENT'
+  blacklist:  []
+  skills:  []
+  icon: 'JACK_O_LANTERN'
+  icon-durability: 0
+  icon-data: 0
+  exp-source: 511

@@ -1,0 +1,86 @@
+Rend: 
+  name: 'Rend'
+  type: 'Instant'
+  max-level: 5
+  skill-req: 'None'
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    level-base: '1'
+    level-scale: '4'
+    cost-base: '1'
+    cost-scale: '1'
+    cooldown-base: '12'
+    cooldown-scale: '-0.75'
+    mana-base: '10'
+    mana-scale: '2.5'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '4'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}&r'
+  icon: 'BEEF'
+  icon-durability: 0
+  icon-data: 0
+  icon-lore: 
+  - '&3{name} &F(&2{level}&F/&2{max}&F)'
+  - '&2Cast type: &6{type}'
+  - '&2Cost: {attr:mana} &2mana'
+  - '&2Cooldown: {attr:cooldown} &2seconds'
+  - '&2Range: {attr:rend-target.range} &2blocks'
+  - ''
+  - " &FRends the target's flesh, dealing"
+  - '   {attr:rend-tick-dmg.value} &2skill damage'
+  - '   &Fevery &61.5 &Fseconds {attr:rend-dmg-rep.repetitions} times'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      indicator: '3D'
+      data: 
+        icon-key: ''
+        indicator: '2D'
+      children: 
+        Single-b: 
+          type: 'target'
+          indicator: '3D'
+          data: 
+            icon-key: 'rend-target'
+            range-base: '1.6'
+            range-scale: '0.15'
+            tolerance-base: '2'
+            tolerance-scale: '0.125'
+            group: 'Enemy'
+            wall: 'False'
+            indicator: '2D'
+            caster: 'false'
+          children: 
+            Repeat-c: 
+              type: 'mechanic'
+              indicator: '3D'
+              data: 
+                icon-key: 'rend-dmg-rep'
+                counts: 'True'
+                repetitions-base: '6'
+                repetitions-scale: '1'
+                period: '1.5'
+                delay: '0'
+                stop-on-fail: 'False'
+                indicator: '2D'
+              children: 
+                Damage-d: 
+                  type: 'mechanic'
+                  indicator: '2D'
+                  data: 
+                    icon-key: 'rend-tick-dmg'
+                    counts: 'False'
+                    type: 'Damage'
+                    value-base: '1'
+                    value-scale: '0.1'
+                    true: 'False'
+                    classifier: 'damage-over-time'
+                    indicator: '3D'
+                  children:  {}

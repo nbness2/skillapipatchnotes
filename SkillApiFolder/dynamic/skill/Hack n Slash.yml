@@ -1,0 +1,73 @@
+Hack n Slash: 
+  name: 'Hack n Slash'
+  type: 'Instant'
+  max-level: 10
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    level-base: '1'
+    level-scale: '2'
+    cost-base: '1'
+    cost-scale: '1'
+    cooldown-base: '10'
+    cooldown-scale: '-0.5'
+    mana-base: '8'
+    mana-scale: '1.2'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '2'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}&r'
+  icon: 'WOODEN_AXE'
+  icon-durability: 0
+  icon-data: 0
+  icon-lore: 
+  - '&3{name} &F(&2{level}&F/&2{max}&F)'
+  - '&2Cast type: &6{type}'
+  - '&2Cost: {attr:mana} &2mana'
+  - '&2Cooldown: {attr:cooldown} &2seconds'
+  - '&2Range: {attr:hack-n-slash-cone.range} &2blocks'
+  - ''
+  - ' &FFuriously slashes a {attr:hack-n-slash-cone.angle} degree arc in'
+  - '   &Ffront of you dealing {attr:hack-n-slash-dmg.value} &2skill damage'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      indicator: '3D'
+      data: 
+        icon-key: ''
+        indicator: '2D'
+      children: 
+        Cone-b: 
+          type: 'target'
+          indicator: '3D'
+          data: 
+            icon-key: 'hack-n-slash-cone'
+            range-base: '2.2'
+            range-scale: '0.2'
+            angle-base: '45'
+            angle-scale: '5'
+            group: 'Enemy'
+            wall: 'False'
+            caster: 'False'
+            max-base: '99'
+            max-scale: '0'
+            indicator: '2D'
+          children: 
+            Damage-c: 
+              type: 'mechanic'
+              indicator: '3D'
+              data: 
+                icon-key: 'hack-n-slash-dmg'
+                counts: 'True'
+                type: 'Damage'
+                value-base: '5.25'
+                value-scale: '1.25'
+                true: 'False'
+                classifier: 'area-of-effect'
+                indicator: '2D'
+              children:  {}
